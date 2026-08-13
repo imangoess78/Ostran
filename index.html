@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -63,24 +64,35 @@
         </div>
       </section>
 
-      <!-- FLEET IMAGE STRIP -->
-      <section class="fleet-strip" aria-label="Armada hauling">
-        <div class="fleet-strip__track">
-          <figure class="fleet-strip__item">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=75&auto=format&fit=crop" alt="Dump truck tambang beroperasi di area pertambangan" loading="lazy" />
-          </figure>
-          <figure class="fleet-strip__item">
-            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&auto=format&fit=crop" alt="Armada kendaraan berat hauling di jalur tambang" loading="lazy" />
-          </figure>
-          <figure class="fleet-strip__item">
-            <img src="https://images.unsplash.com/photo-1565793979681-3c2ed06db4c1?w=600&q=75&auto=format&fit=crop" alt="Truk besar di area penambangan" loading="lazy" />
-          </figure>
-          <figure class="fleet-strip__item">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75&auto=format&fit=crop" alt="Hauling truck membawa muatan batu bara" loading="lazy" />
-          </figure>
-          <figure class="fleet-strip__item">
-            <img src="https://images.unsplash.com/photo-1561345006-a3eaff7eaef4?w=600&q=75&auto=format&fit=crop" alt="Weighbridge timbangan kendaraan berat" loading="lazy" />
-          </figure>
+      <!-- OPERATIONAL IMPACT -->
+      <section class="operations-stats" aria-label="Dampak operasional OSTRAN">
+        <div class="container">
+          <div class="operations-stats__heading">
+            <span class="operations-stats__eyebrow">Data yang menggerakkan operasi</span>
+            <p>Visibilitas lebih baik untuk keputusan yang lebih cepat.</p>
+          </div>
+          <div class="operations-stats__grid">
+            <div class="operations-stat">
+              <div class="operations-stat__icon" aria-hidden="true">↗</div>
+              <strong>30<span>%</span></strong>
+              <p>lebih cepat menyusun laporan operasional</p>
+            </div>
+            <div class="operations-stat">
+              <div class="operations-stat__icon" aria-hidden="true">◎</div>
+              <strong>100<span>%</span></strong>
+              <p>data tercatat dan dapat ditelusuri</p>
+            </div>
+            <div class="operations-stat">
+              <div class="operations-stat__icon" aria-hidden="true">◷</div>
+              <strong>24<span>/7</span></strong>
+              <p>monitoring armada secara real-time</p>
+            </div>
+            <div class="operations-stat">
+              <div class="operations-stat__icon" aria-hidden="true">✓</div>
+              <strong>1<span> platform</span></strong>
+              <p>untuk menyatukan seluruh alur data</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -155,12 +167,16 @@
               <!-- Stat cards row -->
               <div class="pd1-stats">
                 <div class="pd1-stat-card pd1-stat-card--red">
-                  <div class="pd1-stat-card__icon" aria-hidden="true">⏱</div>
+                  <div class="pd1-stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="13" r="7.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v4l2.5 1.5M9 3h6M12 3v2.5M5.5 6.5l-1.5-1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
                   <div class="pd1-stat-card__value">2–4 <span>jam</span></div>
                   <div class="pd1-stat-card__label">rekonsiliasi manual<br/>per shift</div>
                 </div>
                 <div class="pd1-stat-card pd1-stat-card--amber">
-                  <div class="pd1-stat-card__icon" aria-hidden="true">📊</div>
+                  <div class="pd1-stat-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5V5.5M4 19.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="7" y="12" width="2.8" height="5.5" rx="1" fill="currentColor"/><rect x="11" y="9" width="2.8" height="8.5" rx="1" fill="currentColor"/><rect x="15" y="6" width="2.8" height="11.5" rx="1" fill="currentColor"/></svg>
+                  </div>
                   <div class="pd1-stat-card__value">2–5<span>%</span></div>
                   <div class="pd1-stat-card__label">potensi selisih data<br/>yang tak terdeteksi</div>
                 </div>
@@ -315,22 +331,28 @@
 
           <!-- Solutions visual: fleet on the field -->
           <div class="solution-visual">
-            <div class="solution-visual__item">
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80&auto=format&fit=crop" alt="Armada dump truck hauling di tambang" loading="lazy" />
+            <div class="solution-visual__item solution-visual__item--fleet">
+              <div class="solution-visual__animation" aria-hidden="true">
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json" background="transparent" speed="0.8" loop autoplay></lottie-player>
+              </div>
               <div class="solution-visual__caption">
                 <strong>Armada Terpantau</strong>
                 <p>Setiap pergerakan truck tercatat otomatis via RFID</p>
               </div>
             </div>
-            <div class="solution-visual__item">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format&fit=crop" alt="Weighbridge timbangan kendaraan berat" loading="lazy" />
+            <div class="solution-visual__item solution-visual__item--weighbridge">
+              <div class="solution-visual__animation" aria-hidden="true">
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="0.75" loop autoplay></lottie-player>
+              </div>
               <div class="solution-visual__caption">
                 <strong>Weighbridge Terintegrasi</strong>
                 <p>Data timbang masuk sistem real-time, tanpa input manual</p>
               </div>
             </div>
-            <div class="solution-visual__item">
-              <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80&auto=format&fit=crop" alt="Checkpoint monitoring operasi lapangan" loading="lazy" />
+            <div class="solution-visual__item solution-visual__item--checkpoint">
+              <div class="solution-visual__animation" aria-hidden="true">
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="0.9" loop autoplay></lottie-player>
+              </div>
               <div class="solution-visual__caption">
                 <strong>Checkpoint Otomatis</strong>
                 <p>Reader RFID membaca unit tanpa interaksi manual</p>
@@ -679,12 +701,35 @@
       </section>
 
       <!-- CTA SECTION -->
-      <section class="section cta-section">
+      <section class="section cta-section" id="demo">
         <div class="container">
           <div class="cta-box">
-            <h2>Cara terbaik untuk meyakinkan Anda bukan lewat presentasi, tapi lewat melihat langsung.</h2>
-            <p>Jadwalkan demo dan lihat sendiri bagaimana OSTRAN bekerja di operasi Anda.</p>
-            <a href="#contact" class="btn btn--primary btn--lg">Jadwalkan Demo</a>
+            <div class="cta-box__content">
+              <span class="cta-box__eyebrow"><i aria-hidden="true"></i> Mulai dari kebutuhan Anda</span>
+              <h2>Lihat bagaimana operasi Anda bisa <span>lebih terkoneksi.</span></h2>
+              <p>Jadwalkan sesi discovery bersama tim OSTRAN. Kami akan memetakan alur operasional Anda dan menunjukkan demo yang relevan—bukan sekadar presentasi umum.</p>
+              <div class="cta-box__actions">
+                <a href="#contact" class="btn btn--primary btn--lg cta-box__primary">Jadwalkan Demo <span aria-hidden="true">↗</span></a>
+                <a href="https://wa.me/6281204845787?text=Halo%20OSTRAN%2C%20saya%20ingin%20berdiskusi%20tentang%20demo%20OSTRAN." target="_blank" rel="noopener noreferrer" class="cta-box__secondary">Chat via WhatsApp <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="cta-box__trust">
+                <span class="cta-box__avatars" aria-hidden="true"><i>O</i><i>R</i><i>+</i></span>
+                <span><strong>Respons cepat dari tim kami</strong><br />Diskusi awal tanpa komitmen</span>
+              </div>
+            </div>
+            <div class="cta-box__visual" aria-label="Preview proses demo OSTRAN">
+              <div class="cta-box__glow" aria-hidden="true"></div>
+              <div class="cta-box__visual-head"><span class="cta-live"><i aria-hidden="true"></i> OSTRAN LIVE</span><span>●●●</span></div>
+              <div class="cta-box__metric"><span>Operational visibility</span><strong>98.6%</strong><small>↑ 24.8% this month</small></div>
+              <div class="cta-box__progress"><span style="width: 82%"></span></div>
+              <div class="cta-box__checks">
+                <div><i>✓</i><span>Data truck terpantau real-time</span><b>Live</b></div>
+                <div><i>✓</i><span>Rekonsiliasi otomatis</span><b>Ready</b></div>
+                <div><i>✓</i><span>Audit trail terpusat</span><b>Secure</b></div>
+              </div>
+              <span class="cta-box__float cta-box__float--top">+24.8% <small>efficiency</small></span>
+              <span class="cta-box__float cta-box__float--bottom"><i></i> Semua sistem normal</span>
+            </div>
           </div>
         </div>
       </section>

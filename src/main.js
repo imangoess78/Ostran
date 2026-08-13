@@ -204,6 +204,26 @@ function initBackToTop() {
 }
 
 // ============================
+// CTA interaction: subtle pointer tilt for the preview card
+// ============================
+function initCtaInteraction() {
+  const visual = document.querySelector('.cta-box__visual');
+  if (!visual || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  visual.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'touch') return;
+    const rect = visual.getBoundingClientRect();
+    const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -5;
+    const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 5;
+    visual.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+  });
+
+  visual.addEventListener('pointerleave', () => {
+    visual.style.transform = '';
+  });
+}
+
+// ============================
 // Init all
 // ============================
 document.addEventListener('DOMContentLoaded', () => {
@@ -212,4 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initSmoothScroll();
   initBackToTop();
+  initCtaInteraction();
 });
