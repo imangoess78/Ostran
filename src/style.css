@@ -1216,6 +1216,57 @@ body { background: #fbfdff; }
   .cta-section .cta-box { max-width: 100%; }
 }
 
+/* FINAL: Solusi Kami uses static SVG icons instead of Lottie visuals. */
+.solutions .solution-visual__item,
+.solutions .solution-visual__item--fleet,
+.solutions .solution-visual__item--weighbridge,
+.solutions .solution-visual__item--checkpoint {
+  background: #fff !important;
+  border: 1px solid #dbeafe !important;
+  box-shadow: 0 14px 34px rgba(30, 73, 125, .09) !important;
+}
+.solutions .solution-visual__animation {
+  background: linear-gradient(145deg, #eff6ff 0%, #fff 72%) !important;
+  color: #2563eb !important;
+}
+.solutions .solution-visual__animation::before { display: block !important; }
+.solutions .solution-visual__caption {
+  background: #fff !important;
+  color: #0f2744 !important;
+  padding: 18px 20px 20px !important;
+}
+.solutions .solution-visual__caption strong { color: #0f2744 !important; }
+.solutions .solution-visual__caption p { color: #647b94 !important; }
+.solutions .solution-visual__item:hover { box-shadow: 0 18px 38px rgba(30,73,125,.13) !important; }
+
+/* Final Solusi Kami card treatment: replace the legacy Lottie overlay with
+   clean, contextual SVG illustrations and readable content surfaces. */
+.solutions .solution-visual__item,
+.solutions .solution-visual__item--fleet,
+.solutions .solution-visual__item--weighbridge,
+.solutions .solution-visual__item--checkpoint {
+  background: #fff !important;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 14px 34px rgba(30, 73, 125, .09) !important;
+}
+
+.solutions .solution-visual__animation {
+  background: linear-gradient(145deg, #eff6ff 0%, #fff 72%);
+  color: #2563eb;
+}
+
+.solutions .solution-visual__animation::before { display: block; }
+
+.solutions .solution-visual__caption {
+  background: #fff;
+  color: #0f2744;
+  padding: 18px 20px 20px;
+}
+
+.solutions .solution-visual__caption strong { color: #0f2744; }
+.solutions .solution-visual__caption p { color: #647b94; }
+.solutions .solution-visual__item:hover { box-shadow: 0 18px 38px rgba(30,73,125,.13) !important; }
+
 /* Masalah #1: ensure the stat labels stay readable on the light cards. */
 .problem-detail--1 .pd1-stat-card__label {
   color: #49627d;
@@ -1864,8 +1915,9 @@ body { background: #fbfdff; }
   overflow: hidden;
   position: relative;
   aspect-ratio: 4 / 3;
-  box-shadow: var(--shadow-md);
-  background: #eaf2fb;
+  box-shadow: 0 14px 34px rgba(30, 73, 125, .09);
+  background: var(--color-white);
+  border: 1px solid rgba(37, 99, 235, .12);
 }
 
 .solution-visual__animation {
@@ -1873,9 +1925,12 @@ body { background: #fbfdff; }
   height: 100%;
   display: grid;
   place-items: center;
+  min-height: 190px;
   transition: transform 0.5s ease;
   position: relative;
   overflow: hidden;
+  color: #2563EB;
+  background: linear-gradient(145deg, #eff6ff 0%, #ffffff 72%);
 }
 
 .solution-visual__animation::before {
@@ -1886,19 +1941,15 @@ body { background: #fbfdff; }
   pointer-events: none;
 }
 
-.solution-visual__animation lottie-player {
-  width: 82%;
-  height: 82%;
+.solution-visual__icon {
+  width: 112px;
+  height: 112px;
   position: relative;
   z-index: 1;
-  transition: transform 0.5s ease;
+  transition: transform .35s ease;
 }
 
-.solution-visual__item--fleet { background: linear-gradient(145deg, #dbeafe, #eff6ff); }
-.solution-visual__item--weighbridge { background: linear-gradient(145deg, #eff6ff, #f8fbff); }
-.solution-visual__item--checkpoint { background: linear-gradient(145deg, #dbeafe, #eef5ff); }
-
-.solution-visual__item:hover .solution-visual__animation lottie-player {
+.solution-visual__item:hover .solution-visual__icon {
   transform: scale(1.06);
 }
 
@@ -1907,9 +1958,9 @@ body { background: #fbfdff; }
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(15,23,42,0.92) 0%, transparent 100%);
-  padding: 28px 20px 18px;
-  color: var(--color-white);
+  background: var(--color-white);
+  padding: 18px 20px 20px;
+  color: var(--color-dark);
   z-index: 2;
 }
 
@@ -1918,12 +1969,12 @@ body { background: #fbfdff; }
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 4px;
-  color: var(--color-white);
+  color: var(--color-dark);
 }
 
 .solution-visual__caption p {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--color-mid);
   line-height: 1.4;
   margin: 0;
 }
@@ -1936,9 +1987,7 @@ body { background: #fbfdff; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .solution-visual__animation lottie-player {
-    animation-play-state: paused;
-  }
+  .solution-visual__icon { transition: none; }
 }
 
 /* ============================
@@ -3833,6 +3882,8 @@ body { background: #fff; color: var(--color-dark); }
 .section__tag { background: var(--color-primary-light); color: var(--color-primary-dark); }.section__title { letter-spacing: -.04em; }.problem-card, .pillar-card, .dashboard-feature, .comparison-col, .contact-form { box-shadow: 0 8px 30px rgba(15,23,42,.04); }
 
 @media (max-width: 640px) {
+  .navbar__logo,
+  .navbar__logo img { height: 30px; }
   .navbar__nav { top: var(--navbar-h); background: #fff; box-shadow: 0 12px 25px rgba(15,23,42,.1); }
   .hero { min-height: 680px; height: 100svh; }
   .hero__content { padding-left: 20px; padding-right: 20px; }
